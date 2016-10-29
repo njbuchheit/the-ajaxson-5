@@ -1,23 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8"/>
+    <meta name=viewport content="width=device-width, initial-scale=1">
     <title>The AJAXson 5</title>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css"/>
     <script type="text/javascript" src="request-gif.js"></script>
 </head>
 <body>
-    <h1>The AJAXson 5</h1>
+    <header class="ammendJumbo">
+        <h1>The AJAXson 5</h1>
+    </header>
+    <div class="row backGL">
+        <section class="col-md-6">
+            <div class="container-fluid">
+                <form id="form-gif-request" class="form-inline"/>
+                    <div class="labelElem">
+                        <label>What kind of Jackson 5 related gif do you want?</label>
+                        <input name="tag" type="text" placeholder="Tag:"/><br>
+                    </div>
+                    <div class="labelElem">
+                        <label>Please answer the following to prove you're a human:</label><br>
+                        <input id="verify" type="text" placeholder="Answer:"/>
+                        <label>Jacksons are better than 1.</label><br>
+                    </div>
+                    <div class="labelElem">
+                    <input type="submit" value="Get my Gif!" class="btn btn-success"/>
+                    </div>
+                </form>
+            </div>
+        </section>
 
-    <form id="form-gif-request" />
-        <label>What kind of Jackson 5 related gif do you want?</label>
-        <input name="tag" type="text"/><br>
-        <input type="submit" value="Get my Gif!" />
-
-    </form>
-
-    <img id="gif" src="" hidden="true"/>
-    <p id="feedback" hidden="true`"></p>
-    <p id="feedback" hidden="false"></p>
+        <section class="col-md-6">
+            <div class="container-fluid">
+                <img id="gif" src="" hidden="true"/>
+                <p id="feedback" hidden="true`"></p>
+                <p id="feedback" hidden="false"></p>
+            </div>
+        </section>
+    </div>
 
 </body>
 </html>

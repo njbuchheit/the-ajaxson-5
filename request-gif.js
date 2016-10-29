@@ -18,6 +18,8 @@ function fetchAndDisplayGif(event) {
     // Because we will be making our own AJAX request, we dont need to send a normal request and we definitely don't want the page to refresh.
     event.preventDefault();
 
+    if ($('#verify').val() == 5 ) {
+
     // get the user's input text from the DOM
     var searchQuery = $('#tag').val(); // TODO should be e.g. "dance"
     // configure a few parameters to attach to our request
@@ -25,6 +27,7 @@ function fetchAndDisplayGif(event) {
         api_key: "dc6zaTOxFJmzC",
         tag : "jackson 5 " + searchQuery // TODO should be e.g. "jackson 5 dance"
     };
+
 
     // make an ajax request for a random GIF
     $.ajax({
@@ -40,9 +43,9 @@ function fetchAndDisplayGif(event) {
             // TODO
             // 1. set the source attribute of our image to the image_url of the GIF
             $('#gif').attr("src", response.data.image_url);
-            $('#gif').attr("hidden", false);
+            setGifLoadedStatus(true);
             // 2. hide the feedback message and display the image
-            $("#feedback").text("");
+            //$("#feedback").text("");
         },
         error: function() {
             // if something went wrong, the code in here will execute instead of the success function
@@ -56,7 +59,11 @@ function fetchAndDisplayGif(event) {
     // TODO
     // give the user a "Loading..." message while they wait
     $("#feedback").text("Loading...");
-
+    setGifLoadedStatus(false);
+}   else {
+    $("#feedback").text("Verify you're human, please.");
+    setGifLoadedStatus(false);
+    };
 }
 
 
